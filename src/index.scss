@@ -1,0 +1,28 @@
+@import 'carbon-components/scss/globals/scss/styles.scss';
+.mainbody {
+    font-family:"TWK Everett"
+}
+.bx--side-nav {
+    position: absolute;
+    z-index: 1;
+    top: 6rem;
+}
+.bx--btn--primary {
+    background-color: #1e8054;
+}
+.bx--btn--primary:hover {
+    background-color: #1e8054;
+}
+.bx--btn--tertiary {
+    color: #1e8054;
+    border-color: #1e8054;
+}
+.bx--btn--tertiary:hover {
+    background-color: #1e8054;
+}
+.bx--btn--ghost {
+    color: #1e8054;
+}
+.bx--batch-actions {
+    background-color: #1e8054;
+}
