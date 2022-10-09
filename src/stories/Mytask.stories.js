@@ -24,6 +24,7 @@ export const Pinned = Template.bind({});
 Pinned.args = {
   task: {
     ...Default.args.task,
+    title: 'Test Task12',
     state: 'TASK_PINNED',
   },
 };
@@ -32,6 +33,7 @@ export const Archived = Template.bind({});
 Archived.args = {
   task: {
     ...Default.args.task,
+    title: 'Test Task13',
     state: 'TASK_ARCHIVED',
   },
 };
@@ -40,6 +42,7 @@ export const Lftest = Template.bind({});
 Lftest.args = {
   task: {
     ...Default.args.task,
+    title: 'Test Task14',
     state: 'TASK_Lftest',
   },
 };

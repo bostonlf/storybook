@@ -1,20 +1,16 @@
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   DatePicker,
   DatePickerInput,
-  Tabs,
-  Tab,
-  Select, SelectItem,
-  Button
 } from 'carbon-components-react';
 
 
 
-export default function Task({ task: { id, title, state }, onArchiveTask, onPinTask }) {
+export default function Datapicker({ task: { id, title, state }, onArchiveTask, onPinTask }) {
   return (
     <div className={`list-item ${state}`}>
-   <Button>Button</Button>
    <DatePicker
   datePickerType="single"
   onChange={function noRefCheck(){}}
@@ -23,7 +19,7 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
 >
   <DatePickerInput
     id="date-picker-single"
-    labelText="Date Picker label"
+    labelText={"Date Picker label"+title}
     onChange={function noRefCheck(){}}
     onClose={function noRefCheck(){}}
     onOpen={function noRefCheck(){}}
@@ -33,3 +29,34 @@ export default function Task({ task: { id, title, state }, onArchiveTask, onPinT
     </div>
   );
 }
+
+
+Datapicker.propTypes = {
+  /**
+   * Is this the principal call to action on the page?
+   */
+  primary: PropTypes.bool,
+  /**
+   * What background color to use
+   */
+  backgroundColor: PropTypes.string,
+  /**
+   * How large should the button be?
+   */
+  size: PropTypes.oneOf(['small', 'medium']),
+  /**
+   * Button contents
+   */
+  label: PropTypes.string.isRequired,
+  /**
+   * Optional click handler
+   */
+  onClick: PropTypes.func,
+};
+
+Datapicker.defaultProps = {
+  backgroundColor: null,
+  primary: true,
+  size: 'medium',
+  onClick: undefined,
+};
