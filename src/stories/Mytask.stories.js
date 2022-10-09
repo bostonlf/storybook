@@ -12,37 +12,44 @@ const Template = (args) => <Task {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  task: {
-    id: '1',
-    title: 'Test Task11',
-    state: 'TASK_INBOX',
-    updatedAt: new Date(2018, 0, 1, 9, 0),
-  },
+  id: '1',
+  title: 'Test Task11',
+  dateFormat:'m/d/Y',
+  placeholder:"mm/dd/uuu",
+  label:"lftestlabel",
+  state: 'state1',
+  updatedAt: new Date(2018, 0, 1, 9, 0),
 };
 
 export const Pinned = Template.bind({});
 Pinned.args = {
-  task: {
-    ...Default.args.task,
-    title: 'Test Task12',
-    state: 'TASK_PINNED',
-  },
+  id: '2',
+  title: 'Test Task22',
+  dateFormat:'m/d/Y',
+  placeholder:"mm/dd/uuu",
+  label:"lftestPinned",
+  state: 'state2',
+  updatedAt: new Date(2018, 0, 1, 9, 0),
 };
 
 export const Archived = Template.bind({});
 Archived.args = {
-  task: {
-    ...Default.args.task,
-    title: 'Test Task13',
-    state: 'TASK_ARCHIVED',
-  },
+  id: '3',
+  title: 'Test Task33',
+  dateFormat:'m/d/Y',
+  placeholder:"mm/dd/uuu",
+  label:"lftestArchived",
+  state: 'state3',
+  updatedAt: new Date(2018, 0, 1, 9, 0),
 };
 
 export const Lftest = Template.bind({});
 Lftest.args = {
-  task: {
-    ...Default.args.task,
-    title: 'Test Task14',
-    state: 'TASK_Lftest',
-  },
+  id: '4',
+  title: 'Test Task44',
+  dateFormat:'m/d/Y',
+  placeholder:"mm/dd/uuu",
+  label:"lftest",
+  state: 'state4',
+  updatedAt: new Date(2018, 0, 1, 9, 0),
 };
