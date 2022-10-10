@@ -13,12 +13,16 @@ const Template = (args) => <Task {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   id: '1',
-  title: 'Test Task11',
+  title: 'My datepicker',
   dateFormat:'m/d/Y',
   placeholder:"mm/dd/uuu",
   label:"lftestlabel",
   state: 'state1',
-  updatedAt: new Date(2018, 0, 1, 9, 0),
+  invalid:false,
+  invalidText:'invalidText:format error',
+  InputDisabled:false,
+  InputAllowInput:false,
+  onChange:()=>{console.log("onChange")}
 };
 
 export const Pinned = Template.bind({});
@@ -29,7 +33,6 @@ Pinned.args = {
   placeholder:"mm/dd/uuu",
   label:"lftestPinned",
   state: 'state2',
-  updatedAt: new Date(2018, 0, 1, 9, 0),
 };
 
 export const Archived = Template.bind({});
@@ -40,7 +43,6 @@ Archived.args = {
   placeholder:"mm/dd/uuu",
   label:"lftestArchived",
   state: 'state3',
-  updatedAt: new Date(2018, 0, 1, 9, 0),
 };
 
 export const Lftest = Template.bind({});
@@ -51,5 +53,4 @@ Lftest.args = {
   placeholder:"mm/dd/uuu",
   label:"lftest",
   state: 'state4',
-  updatedAt: new Date(2018, 0, 1, 9, 0),
 };

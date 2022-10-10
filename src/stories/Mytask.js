@@ -48,28 +48,24 @@ import {
 // export default ContractEndDaterEle
 
 
-export default function Datapicker({ id, title, dateFormat,placeholder,label,state, onArchiveTask, onPinTask,primary }) {
+export default function Datapicker({ id, title, dateFormat, placeholder, label, state, invalid, invalidText, InputDisabled, InputAllowInput, onChange, onPinTask, primary }) {
   return (
-    <div className={`list-item ${state}`}>
-   <DatePicker
-   dateFormat={dateFormat}
-  datePickerType="single"
-  onChange={function noRefCheck(){}}
-  onClose={function noRefCheck(){}}
-  onOpen={function noRefCheck(){}}
->
-  <DatePickerInput
-    id="date-picker-single"
-    placeholder={placeholder}
-    labelText={"Date Picker label"+title}
-    onChange={function noRefCheck(){}}
-    onClose={function noRefCheck(){}}
-    onOpen={function noRefCheck(){}}
-  />
-</DatePicker>
-{label}
-primary:{primary}
-    </div>
+    <DatePicker
+      dateFormat={dateFormat}
+      datePickerType="single"
+      onChange={onChange}
+    >
+      <DatePickerInput
+        id="date-picker-single"
+        placeholder={placeholder}
+        labelText={title}
+        disabled={InputDisabled}
+        allowInput={InputAllowInput}
+        onChange={function noRefCheck() { }}
+        invalid={invalid}
+        invalidText={invalidText}
+      />
+    </DatePicker>
   );
 }
 
@@ -78,15 +74,15 @@ Datapicker.propTypes = {
   /**
    * Is this the principal call to action on the page?
    */
-  primary: PropTypes.bool,
+  // primary: PropTypes.bool,
   /**
    * What background color to use
    */
-  backgroundColor: PropTypes.string,
+  // backgroundColor: PropTypes.string,
   /**
    * How large should the button be?
    */
-  size: PropTypes.oneOf(['small', 'medium']),
+  // size: PropTypes.oneOf(['small', 'medium']),
   /**
    * Button contents
    */
@@ -94,16 +90,16 @@ Datapicker.propTypes = {
   /**
    * Optional click handler
    */
-  onClick: PropTypes.func,
+  onChange: PropTypes.func,
   //add for test
-  placeholder:PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
 };
 
 Datapicker.defaultProps = {
-  backgroundColor: null,
-  primary: true,
-  size: 'medium',
-  onClick: undefined,
-  placeholder:"abcd",
-  label:"mylabel"
+  // backgroundColor: null,
+  // primary: true,
+  // size: 'medium',
+  onChange: () => { console.log("this is onclick.") },
+  placeholder: "abcd",
+  label: "mylabel"
 };
